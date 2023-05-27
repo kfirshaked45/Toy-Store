@@ -4,13 +4,12 @@ import { showSuccessMsg } from '../services/event-bus.service.js';
 import { userService } from '../services/user.service.js';
 import { REMOVE_TOY_FROM_CART } from '../store/toy.reducer.js';
 import { checkout } from '../store/user.action.js';
+import { Button } from '@mui/material';
 
 export function ShoppingCart({ isCartShown, onCloseCart }) {
   const dispatch = useDispatch();
 
   const cart = useSelector((storeState) => storeState.toyModule.shoppingCart);
-
-  // TODO: get from storeState
   const user = userService.getLoggedinUser();
 
   function removeFromCart(toyId) {
@@ -52,9 +51,12 @@ export function ShoppingCart({ isCartShown, onCloseCart }) {
         ))}
       </ul>
       <p>Total: ${total} </p>
-      <button disabled={!user || !total} onClick={onCheckout}>
+      <Button variant="outlined" disabled={!user || !total} onClick={onCheckout}>
         Checkout
-      </button>
+      </Button>
+      {/* <button disabled={!user || !total} onClick={onCheckout}>
+        Checkout
+      </button> */}
     </section>
   );
 }

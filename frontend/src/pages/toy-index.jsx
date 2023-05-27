@@ -8,7 +8,6 @@ import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js';
 import { ADD_TOY_TO_CART } from '../store/toy.reducer.js';
 import { loadToys, removeToy, saveToy } from '../store/toy.action.js';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 export default function ToyIndex() {
   const [filterBy, setFilterBy] = useState(toyService.getDefaultFilter());
@@ -69,11 +68,10 @@ export default function ToyIndex() {
 
   return (
     <section>
-      <h3>Toys App</h3>
       <main>
-        <Link to={`/toy/edit`}>Add Toy</Link>
-        <button onClick={onAddToy}>Add random Toy</button>
+        {/* <button onClick={onAddToy}>Add random Toy</button> */}
         <ToyFilter onSetFilter={onSetFilter} />
+
         {isLoading && <h4>Loading...</h4>}
         <ToyList toys={toys} onRemoveToy={onRemoveToy} onEditToy={onEditToy} addToCart={addToCart} />
         <hr />

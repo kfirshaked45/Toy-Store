@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { toyService } from '../services/toy.service.js';
 import { utilService } from '../services/util.service.js';
+import TextField from '@mui/material/TextField';
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 export function ToyFilter({ onSetFilter }) {
   const [filterByToEdit, setFilterByToEdit] = useState(toyService.getDefaultFilter());
@@ -35,9 +38,8 @@ export function ToyFilter({ onSetFilter }) {
 
   return (
     <section className="toy-filter full main-layout">
-      <h2>Toys Filter</h2>
       <form onSubmit={onSubmitFilter}>
-        <label htmlFor="name">Toy Name:</label>
+        {/* <label htmlFor="name">Toy Name:</label>
         <input
           type="text"
           id="name"
@@ -46,13 +48,36 @@ export function ToyFilter({ onSetFilter }) {
           value={filterByToEdit.txt}
           onChange={handleChange}
           ref={elInputRef}
+        /> */}
+        <TextField
+          label="Toy Name"
+          variant="standard"
+          type="text"
+          id="name"
+          name="name"
+          value={filterByToEdit.txt}
+          onChange={handleChange}
+          ref={elInputRef}
+        />
+        <TextField
+          label="By Max Price"
+          variant="standard"
+          type="number"
+          id="price"
+          name="price"
+          value={filterByToEdit.price}
+          onChange={handleChange}
         />
 
-        <label htmlFor="price">Max price:</label>
-        <input type="number" id="price" name="price" placeholder="By max price" value={filterByToEdit.price} onChange={handleChange} />
+        {/* <label htmlFor="price">Max price:</label>
+        <input type="number" id="price" name="price" placeholder="By max price" value={filterByToEdit.price} onChange={handleChange} /> */}
 
         <button hidden>Filter</button>
       </form>
+
+      <Link to={`/toy/edit`}>
+        <Button variant="text">Add Toy</Button>
+      </Link>
     </section>
   );
 }

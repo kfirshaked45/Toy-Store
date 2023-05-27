@@ -1,0 +1,30 @@
+@media screen and (min-width: 900px) {
+  .toy-list {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .nav-header a {
+    font-size: 30px;
+    padding: 2rem;
+  }
+  .top-logo-section {
+    font-size: 22px;
+  }
+  .toy-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .nav-header a {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .top-logo-section h1 {
+    font-size: 20px;
+  }
+}

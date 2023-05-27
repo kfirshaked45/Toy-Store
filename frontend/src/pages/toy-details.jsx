@@ -1,9 +1,8 @@
-const { useEffect, useState } = React;
-import useEffect,useState =
-const { useParams, useNavigate, Link } = ReactRouterDOM;
-
+// const { useEffect, useState } = React;
+import { useEffect, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { toyService } from '../services/toy.service.js';
-import { showErrorMsg } from '../services/event-bus.service.js';
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js';
 
 export function ToyDetails() {
   const [toy, setToy] = useState(null);
@@ -12,7 +11,7 @@ export function ToyDetails() {
 
   useEffect(() => {
     loadToy();
-  }, [toyId]);
+  }, []);
 
   function loadToy() {
     toyService
@@ -34,7 +33,10 @@ export function ToyDetails() {
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi voluptas cumque tempore, aperiam sed dolorum rem! Nemo quidem,
         placeat perferendis tempora aspernatur sit, explicabo veritatis corrupti perspiciatis repellat, enim quibusdam!
       </p>
-      <Link to={`/toy/edit/${toy._id}`}>Edit</Link>
+      <div className="details-buttons-container">
+        <Link to={`/toy/`}>Back</Link>
+        <Link to={`/toy/edit/${toy._id}`}>Edit</Link>
+      </div>
     </section>
   );
 }

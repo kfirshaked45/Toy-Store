@@ -1,0 +1,59 @@
+.toy-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.toy-filter a {
+  align-self: center;
+  color: black;
+}
+.toy-list {
+  list-style-type: none;
+  display: grid;
+
+  text-align: center;
+}
+.toy-preview {
+  border: 0.5px solid rgb(221, 220, 220);
+  border-radius: 10px;
+  margin-inline-end: 2rem;
+  margin-block-end: 1rem;
+  padding: 20px;
+}
+.toy-preview button {
+  margin-inline-end: 10px;
+}
+.toy-edit {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.form-edit {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  justify-content: space-between;
+  height: 400px;
+}
+.form-edit-buttons {
+  margin-block-start: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.form-edit-buttons button {
+  margin-inline-end: 1rem;
+  padding: 1rem;
+  color: black;
+  border-color: black;
+}
+.form-edit-buttons button:hover {
+  background-color: rgb(218, 217, 217);
+  border-color: inherit;
+}
+.details-buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+.toy-details {
+  font-size: 20px;
+}

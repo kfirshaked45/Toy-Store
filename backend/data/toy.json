@@ -12,18 +12,6 @@
     "inStock": true
   },
   {
-    "_id": "t102",
-    "name": "Talking Doll2",
-    "price": 1234,
-    "labels": [
-      "Doll",
-      "Battery Powered",
-      "Baby"
-    ],
-    "createdAt": 1631031802011,
-    "inStock": false
-  },
-  {
     "_id": "t103",
     "name": "Talking Doll3",
     "price": 1235,
@@ -44,5 +32,10 @@
       "fullname": "Muki Baba",
       "score": 10000
     }
+  },
+  {
+    "name": "kfir",
+    "price": 40020,
+    "_id": "iwEaX"
   }
 ]

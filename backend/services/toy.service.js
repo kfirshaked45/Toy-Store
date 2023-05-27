@@ -25,12 +25,12 @@ function remove(toyId, loggedinUser) {
   const idx = toys.findIndex((toy) => toy._id === toyId);
   if (idx === -1) return Promise.reject('No Such Toy');
   const toy = toys[idx];
-  if (toy.owner._id !== loggedinUser._id) return Promise.reject('Not your toy');
+  // if (toy.owner._id !== loggedinUser._id) return Promise.reject('Not your toy');
   toys.splice(idx, 1);
   return _saveToysToFile();
 }
 
-function save(toy, loggedinUser) {
+function save(toy) {
   if (toy._id) {
     const toyToUpdate = toys.find((currToy) => currToy._id === toy._id);
     // if (toyToUpdate._id !== loggedinUser._id) return Promise.reject('Not your toy');

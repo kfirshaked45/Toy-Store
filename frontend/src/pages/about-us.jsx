@@ -1,3 +1,6 @@
+import React from 'react';
+import GoogleMap from '../cmps/google-map.jsx';
+
 export default function AboutUs() {
   return (
     <section>
@@ -6,6 +9,7 @@ export default function AboutUs() {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aperiam quo veniam velit dolor reprehenderit, laudantium consequatur
         neque numquam labore quae. Accusamus libero perferendis ducimus? Alias unde hic quisquam doloremque.
       </p>
+      <GoogleMap />
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import { ToyPreview } from './toy-preview.jsx';
+import Button from '@mui/material/Button';
 
 export function ToyList({ toys, onRemoveToy, onEditToy, addToCart, txt = 'Mashu' }) {
   return (
@@ -8,30 +9,33 @@ export function ToyList({ toys, onRemoveToy, onEditToy, addToCart, txt = 'Mashu'
           <ToyPreview toy={toy} />
 
           {/* <div> */}
-          {/* <button
-              onClick={() => {
-                onRemoveToy(toy._id);
-              }}
-            >
-              x
-            </button>
-            <button
-              onClick={() => {
-                onEditToy(toy);
-              }}
-            >
-              Edit
-            </button>
-          </div> */}
 
-          <button
+          <Button
+            className="buy"
+            variant="contained"
+            onClick={() => {
+              addToCart(toy);
+            }}
+          >
+            Add to Cart
+          </Button>
+          <Button
+            className="buy"
+            variant="outlined"
+            onClick={() => {
+              onRemoveToy(toy._id);
+            }}
+          >
+            Delete
+          </Button>
+          {/* <button
             className="buy"
             onClick={() => {
               addToCart(toy);
             }}
           >
             Add to Cart
-          </button>
+          </button> */}
         </li>
       ))}
     </ul>
