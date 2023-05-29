@@ -17,11 +17,6 @@ export default function AppHeader() {
 
   // TODO: get from storeState
 
-  function onLogout() {
-    logout().catch((err) => {
-      showErrorMsg('Cannot logout');
-    });
-  }
 
   return (
     <header className="app-header">
@@ -48,34 +43,25 @@ export default function AppHeader() {
           />
         </div>
         {/* {user && (
-            <section className="user-info">
-              <p>
-                <Link to={`/user/${user._id}`}>{user.fullname}</Link>
-                <span>${user.score.toLocaleString()}</span>
-              </p>
+          <section className="user-info">
+            <p>
+              <Link to={`/user/${user._id}`}>{user.fullname}</Link>
+              <span>${user.score.toLocaleString()}</span>
+            </p>
 
-              <button onClick={onLogout}>Logout</button>
-            </section>
-          )}
-          {!user && (
-            <section className="user-info">
-              <LoginSignup dispatch={dispatch} />
-            </section>
-          )} */}
+            <button onClick={onLogout}>Logout</button>
+          </section>
+        )}
+        {!user && (
+          <section className="user-info">
+            <LoginSignup dispatch={dispatch} />
+          </section>
+        )} */}
       </div>
       <nav className="nav-header">
-        <NavLink to="/">Home</NavLink> <NavLink to="/toy">Toys</NavLink> <NavLink to="/about">About</NavLink>
+        <NavLink to="/">Home</NavLink> <NavLink to="/toys">Toys</NavLink> <NavLink to="/about">About</NavLink>
         <NavLink to="/dashboard">Dashboard</NavLink>
-        {/* eslint-disable-next-line */}
-        {/* <a
-          href="#"
-          onClick={(ev) => {
-            ev.preventDefault();
-            dispatch({ type: SET_CART_IS_SHOWN, isCartShown: true });
-          }}
-        >
-          <FontAwesomeIcon icon={faCartShopping} />
-        </a> */}
+        <NavLink to="/user">{user ? 'Logout' : 'Login'} </NavLink>
       </nav>
     </header>
   );

@@ -33,6 +33,7 @@ export function removeToy(toyId) {
 
 export function saveToy(toy) {
   const type = toy._id ? UPDATE_TOY : ADD_TOY;
+  console.log(toy, type, 'THIS IS WHAT SAVE SERVICE GETS');
   return toyService
     .save(toy)
     .then((savedToy) => {

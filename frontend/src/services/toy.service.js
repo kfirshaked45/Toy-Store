@@ -4,7 +4,7 @@ import { userService } from './user.service.js';
 import { httpService } from './http.service.js';
 
 const STORAGE_KEY = 'toyDB';
-const BASE_URL = 'toy/';
+const BASE_URL = 'toys/';
 
 export const toyService = {
   query,

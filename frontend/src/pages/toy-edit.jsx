@@ -22,7 +22,7 @@ export default function ToyEdit() {
       .then((toy) => setToyToEdit(toy))
       .catch((err) => {
         console.log('Had issues in toy details', err);
-        navigate('/toy');
+        navigate('/toys');
       });
   }
   // console.log(toyToEdit, 'TOY TO EDIT HERE');
@@ -42,7 +42,7 @@ export default function ToyEdit() {
       .then((toy) => {
         console.log('toy saved', toy);
         showSuccessMsg('Toy saved!');
-        navigate('/toy');
+        navigate('/toys');
       })
       .catch((err) => {
         console.log('err', err);
@@ -63,7 +63,7 @@ export default function ToyEdit() {
         {/* <input type="number" name="price" id="price" placeholder="Enter price" value={toyToEdit.price} onChange={handleChange} /> */}
 
         <div className="form-edit-buttons">
-          <Link to="/toy">
+          <Link to="/toys">
             <Button variant="outlined">Cancel</Button>
           </Link>
           <Button variant="outlined" onClick={onSaveToy}>

@@ -14,6 +14,7 @@ function CustomInput(props) {
 
 export function MyForm({ onChange, credentials, onSubmit, isSignupState, onToggleSignupState }) {
   const { username, password, fullname } = credentials;
+
   return (
     <div>
       <Formik initialValues={credentials} validationSchema={SignupSchema} onSubmit={onSubmit}>

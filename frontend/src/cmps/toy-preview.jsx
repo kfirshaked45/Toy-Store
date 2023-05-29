@@ -15,11 +15,11 @@ export function ToyPreview({ toy }) {
         </p>
       )}
       <hr />
-      <Link to={`/toy/${toy._id}`}>
+      <Link to={`/toys/${toy._id}`}>
         <Button variant="text">Details</Button>
       </Link>
 
-      <Link to={`/toy/edit/${toy._id}`}>
+      <Link to={`/toys/edit/${toy._id}`}>
         <Button variant="text">Edit</Button>
       </Link>
     </article>

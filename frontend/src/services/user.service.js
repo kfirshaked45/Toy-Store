@@ -2,6 +2,7 @@ import axios from 'axios';
 import { storageService } from './async-storage.service.js';
 import { httpService } from './http.service.js';
 
+
 const STORAGE_KEY = 'userDB';
 const BASE_URL = 'auth/';
 const STORAGE_KEY_LOGGEDIN = 'loggedinUser';
@@ -28,16 +29,16 @@ function login({ username, password }) {
 }
 
 // function login({ username, password }) {
-//     return storageService.query(STORAGE_KEY)
-//         .then(users => {
-//             const user = users.find(user => user.username === username)
-//             if (user) return _setLoggedinUser(user)
-//             else return Promise.reject('Invalid login')
-//         })
+//   return storageService.query(STORAGE_KEY).then((users) => {
+//     const user = users.find((user) => user.username === username);
+//     if (user) return _setLoggedinUser(user);
+//     else return Promise.reject('Invalid login');
+//   });
 // }
 
 function signup({ username, password, fullname }) {
   const user = { username, password, fullname, score: 10000 };
+
   return httpService.post(BASE_URL + 'signup', user).then(_setLoggedinUser);
 }
 

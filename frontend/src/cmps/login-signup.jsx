@@ -15,6 +15,7 @@ export function LoginSignup({ dispatch }) {
   const [credentials, setCredentials] = useState(getEmptyCredentials());
   const [isSignupState, setIsSignupState] = useState(false);
 
+  const { username, password, fullname } = credentials;
   function handleCredentialsChange(ev) {
     const field = ev.target.name;
     const value = ev.target.value;
@@ -22,9 +23,9 @@ export function LoginSignup({ dispatch }) {
     setCredentials(updatedCredentials);
   }
 
-  function onSubmit(values) {
+  function onSubmit() {
     if (isSignupState) {
-      signup(values)
+      signup({ username, password, fullname })
         .then((user) => {
           showSuccessMsg(`Welcome ${user.fullname}`);
         })
@@ -32,7 +33,7 @@ export function LoginSignup({ dispatch }) {
           showErrorMsg('Oops try again');
         });
     } else {
-      login(values)
+      login({ username, password })
         .then((user) => {
           showSuccessMsg(`Hi again ${user.fullname}`);
         })
@@ -45,8 +46,6 @@ export function LoginSignup({ dispatch }) {
   function onToggleSignupState() {
     setIsSignupState(!isSignupState);
   }
-
-  const { username, password, fullname } = credentials;
 
   return (
     <div className="login-page">
